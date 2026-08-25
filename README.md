@@ -25,9 +25,8 @@ The project demonstrates a layered backend architecture with separation of conce
 
 The solution is divided into four projects:
 
-StudentCourseManagement
-│
-├── StudentCourseManagement.API
-├── StudentCourseManagement.Application
-├── StudentCourseManagement.Domain
-└── StudentCourseManagement.Infrastructure
+StudentCourseManagement:
+-StudentCourseManagement.API
+-StudentCourseManagement.Application
+-StudentCourseManagement.Domain
+-StudentCourseManagement.Infrastructure
