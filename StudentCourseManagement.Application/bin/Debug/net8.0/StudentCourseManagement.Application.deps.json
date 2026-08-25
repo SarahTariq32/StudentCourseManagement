@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "StudentCourseManagement.Application/1.0.0": {
+        "dependencies": {
+          "StudentCourseManagement.Domain": "1.0.0"
+        },
+        "runtime": {
+          "StudentCourseManagement.Application.dll": {}
+        }
+      },
+      "StudentCourseManagement.Domain/1.0.0": {
+        "runtime": {
+          "StudentCourseManagement.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StudentCourseManagement.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StudentCourseManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
