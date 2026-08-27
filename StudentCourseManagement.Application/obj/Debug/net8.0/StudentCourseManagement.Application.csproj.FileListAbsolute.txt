@@ -13,3 +13,4 @@ C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCour
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.Application\obj\Debug\net8.0\refint\StudentCourseManagement.Application.dll
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.Application\obj\Debug\net8.0\StudentCourseManagement.Application.pdb
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.Application\obj\Debug\net8.0\ref\StudentCourseManagement.Application.dll
+C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.Application\obj\Debug\net8.0\StudentCourseManagement.Application.sourcelink.json

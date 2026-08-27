@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using StudentCourseManagement.Infrastructure.Entities;
-
+using StudentCourseManagement.Infrastructure.AuthEntities;
 namespace StudentCourseManagement.Infrastructure.Data;
 
 public partial class ApplicationDbContext : DbContext
@@ -15,6 +15,8 @@ public partial class ApplicationDbContext : DbContext
     public virtual DbSet<Course> Courses { get; set; }
 
     public virtual DbSet<Student> Students { get; set; }
+
+    public virtual DbSet<UsersDatum> UsersData { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -38,6 +40,22 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.Name).HasMaxLength(100);
         });
 
+        modelBuilder.Entity<UsersDatum>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+
+            entity.HasIndex(e => e.Username)
+                  .IsUnique();
+
+            entity.Property(e => e.Username)
+                  .HasMaxLength(100);
+
+            entity.Property(e => e.PasswordHash)
+                  .HasMaxLength(255);
+
+            entity.Property(e => e.Role)
+                  .HasMaxLength(50);
+        });
         OnModelCreatingPartial(modelBuilder);
     }
 

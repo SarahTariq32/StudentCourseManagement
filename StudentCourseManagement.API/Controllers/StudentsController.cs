@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StudentCourseManagement.Application.DTOs;
 using StudentCourseManagement.Application.Interfaces;
 
 namespace StudentCourseManagement.API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class StudentsController : ControllerBase
@@ -16,6 +19,7 @@ public class StudentsController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Roles = "Admin,admin")]
     public async Task<IActionResult> GetAll()
     {
         try
@@ -42,6 +46,16 @@ public class StudentsController : ControllerBase
             if (student == null)
                 return NotFound($"Student with ID {id} not found.");
 
+            if (!IsAdmin())
+            {
+                var loggedInUsername = User.FindFirst(ClaimTypes.Name)?.Value;
+
+                if (!AreNamesMatching(student.Name, loggedInUsername))
+                {
+                    return Forbid();
+                }
+            }
+
             return Ok(student);
         }
         catch (Exception ex)
@@ -51,6 +65,7 @@ public class StudentsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin,admin")]
     public async Task<IActionResult> Create(CreateStudentDto dto)
     {
         try
@@ -82,6 +97,21 @@ public class StudentsController : ControllerBase
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            var existingStudent = await _service.GetByIdAsync(id);
+
+            if (existingStudent == null)
+                return NotFound($"Student with ID {id} not found.");
+
+            if (!IsAdmin())
+            {
+                var loggedInUsername = User.FindFirst(ClaimTypes.Name)?.Value;
+
+                if (!AreNamesMatching(existingStudent.Name, loggedInUsername))
+                {
+                    return Forbid();
+                }
+            }
+
             var updated = await _service.UpdateAsync(id, dto);
 
             if (!updated)
@@ -96,6 +126,7 @@ public class StudentsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin,admin")]
     public async Task<IActionResult> Delete(int id)
     {
         try
@@ -114,5 +145,21 @@ public class StudentsController : ControllerBase
         {
             return StatusCode(500, $"Error deleting student: {ex.Message}");
         }
+    }
+
+    private bool IsAdmin()
+    {
+        return User.IsInRole("Admin") || User.IsInRole("admin");
+    }
+
+    private static bool AreNamesMatching(string? name1, string? name2)
+    {
+        if (string.IsNullOrWhiteSpace(name1) || string.IsNullOrWhiteSpace(name2))
+            return false;
+
+        var cleaned1 = new string(name1.Where(c => !char.IsWhiteSpace(c)).ToArray());
+        var cleaned2 = new string(name2.Where(c => !char.IsWhiteSpace(c)).ToArray());
+
+        return string.Equals(cleaned1, cleaned2, StringComparison.OrdinalIgnoreCase);
     }
 }

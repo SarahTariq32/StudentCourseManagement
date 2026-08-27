@@ -77,7 +77,6 @@ C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCour
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\obj\Debug\net8.0\StudentC.8AFAB2AC.Up2Date
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\obj\Debug\net8.0\StudentCourseManagement.API.dll
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\obj\Debug\net8.0\refint\StudentCourseManagement.API.dll
@@ -150,3 +149,9 @@ C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCour
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\obj\Debug\net8.0\StudentCourseManagement.API.sourcelink.json
+C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

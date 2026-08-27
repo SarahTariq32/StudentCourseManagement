@@ -17,3 +17,4 @@ C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCour
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.Infrastructure\obj\Debug\net8.0\StudentCourseManagement.Infrastructure.pdb
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.Infrastructure\obj\Debug\net8.0\StudentCourseManagement.Infrastructure.genruntimeconfig.cache
 C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.Infrastructure\obj\Debug\net8.0\ref\StudentCourseManagement.Infrastructure.dll
+C:\Users\sarah\OneDrive\Desktop\Internship 2\StudentCourseManagement\StudentCourseManagement.Infrastructure\obj\Debug\net8.0\StudentCourseManagement.Infrastructure.sourcelink.json
