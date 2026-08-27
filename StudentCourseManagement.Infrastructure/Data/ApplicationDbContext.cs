@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using StudentCourseManagement.Infrastructure.Entities;
@@ -55,6 +55,11 @@ public partial class ApplicationDbContext : DbContext
 
             entity.Property(e => e.Role)
                   .HasMaxLength(50);
+
+            entity.Property(e => e.RefreshToken)
+                  .HasMaxLength(500);
+
+            entity.Property(e => e.RefreshTokenExpiryTime);
         });
         OnModelCreatingPartial(modelBuilder);
     }

@@ -1,4 +1,4 @@
-﻿using StudentCourseManagement.Application.DTOs;
+using StudentCourseManagement.Application.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +11,6 @@ namespace StudentCourseManagement.Application.Interfaces
     {
         Task<bool> RegisterAsync(RegisterDto dto);
         Task<AuthResponseDto?> LoginAsync(LoginDto dto);
+        Task<AuthResponseDto?> RefreshTokenAsync(RefreshTokenDto dto);
     }
 }

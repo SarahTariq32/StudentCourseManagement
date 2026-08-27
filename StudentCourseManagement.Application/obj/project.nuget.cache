@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "D0GKFZqpICs=",
+  "dgSpecHash": "3ur5floumzI=",
   "success": true,
   "projectFilePath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sarah\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\sarah\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
     "C:\\Users\\sarah\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.11\\microsoft.aspnetcore.cryptography.internal.8.0.11.nupkg.sha512",
     "C:\\Users\\sarah\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.11\\microsoft.aspnetcore.cryptography.keyderivation.8.0.11.nupkg.sha512",
     "C:\\Users\\sarah\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

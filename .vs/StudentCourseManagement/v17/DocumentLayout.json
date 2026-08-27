@@ -3,96 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|solutionrelative:studentcoursemanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|solutionrelative:studentcoursemanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|solutionrelative:studentcoursemanagement.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39B891AB-7515-4777-89E9-5FBD8D665C77}|StudentCourseManagement.Domain\\StudentCourseManagement.Domain.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39B891AB-7515-4777-89E9-5FBD8D665C77}|StudentCourseManagement.Domain\\StudentCourseManagement.Domain.csproj|solutionrelative:studentcoursemanagement.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|solutionrelative:studentcoursemanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\authdata\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\authdata\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|solutionrelative:studentcoursemanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.api\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|solutionrelative:studentcoursemanagement.api\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\mappings\\studentmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\mappings\\studentmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{840D2531-815D-45AD-97BF-DC748D14CFE8}|StudentCourseManagement.API\\StudentCourseManagement.API.csproj|solutionrelative:studentcoursemanagement.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\mappings\\coursemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\mappings\\coursemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\interfaces\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\interfaces\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\authdata\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\authdata\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\interfaces\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\interfaces\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\interfaces\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -103,6 +71,14 @@
       "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\interfaces\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\interfaces\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\interfaces\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\interfaces\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\interfaces\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\updatestudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\updatestudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -111,16 +87,40 @@
       "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\updatecoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\createcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\createcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\createstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\createstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\createcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\createcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.application\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B80670-AF07-4F0E-9577-486B9E3C87B4}|StudentCourseManagement.Application\\StudentCourseManagement.Application.csproj|solutionrelative:studentcoursemanagement.application\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\mappings\\studentmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\mappings\\studentmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|c:\\users\\sarah\\onedrive\\desktop\\internship 2\\studentcoursemanagement\\studentcoursemanagement.infrastructure\\mappings\\coursemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45BFBB79-4045-4311-8FAD-6638C8D75C36}|StudentCourseManagement.Infrastructure\\StudentCourseManagement.Infrastructure.csproj|solutionrelative:studentcoursemanagement.infrastructure\\mappings\\coursemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -130,11 +130,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.API\\appsettings.json",
               "RelativeDocumentMoniker": "StudentCourseManagement.API\\appsettings.json",
@@ -147,15 +147,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.API\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.API\\Controllers\\AuthController.cs",
               "RelativeToolTip": "StudentCourseManagement.API\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA1wCYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowDEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T21:10:39.754Z"
+              "WhenOpened": "2026-08-26T21:10:39.754Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -165,37 +166,40 @@
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\Services\\AuthService.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Services\\AuthService.cs",
               "RelativeToolTip": "StudentCourseManagement.Application\\Services\\AuthService.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAgwGMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwHkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T21:02:47.226Z"
+              "WhenOpened": "2026-08-26T21:02:47.226Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Interfaces\\IAuthService.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\Interfaces\\IAuthService.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Interfaces\\IAuthService.cs",
               "RelativeToolTip": "StudentCourseManagement.Application\\Interfaces\\IAuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T20:58:29.563Z"
+              "WhenOpened": "2026-08-26T20:58:29.563Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 27,
               "Title": "AuthResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\AuthResponseDto.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\DTOs\\AuthResponseDto.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\AuthResponseDto.cs",
               "RelativeToolTip": "StudentCourseManagement.Application\\DTOs\\AuthResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T20:57:48.885Z"
+              "WhenOpened": "2026-08-26T20:57:48.885Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 23,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\LoginDto.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\DTOs\\LoginDto.cs",
@@ -203,11 +207,12 @@
               "RelativeToolTip": "StudentCourseManagement.Application\\DTOs\\LoginDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T20:57:19.96Z"
+              "WhenOpened": "2026-08-26T20:57:19.96Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 22,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\RegisterDto.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\DTOs\\RegisterDto.cs",
@@ -215,59 +220,64 @@
               "RelativeToolTip": "StudentCourseManagement.Application\\DTOs\\RegisterDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T20:56:54.209Z"
+              "WhenOpened": "2026-08-26T20:56:54.209Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Infrastructure\\Repositories\\UserRepository.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "StudentCourseManagement.Infrastructure\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAwwDMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAFAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T20:55:00.479Z"
+              "WhenOpened": "2026-08-26T20:55:00.479Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\Interfaces\\IUserRepository.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Interfaces\\IUserRepository.cs",
               "RelativeToolTip": "StudentCourseManagement.Application\\Interfaces\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T20:54:22.165Z"
+              "WhenOpened": "2026-08-26T20:54:22.165Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Domain\\Entities\\User.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Domain\\Entities\\User.cs",
               "RelativeToolTip": "StudentCourseManagement.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA5wBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T20:53:42.68Z"
+              "WhenOpened": "2026-08-26T20:53:42.68Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Infrastructure\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "StudentCourseManagement.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAiwDkAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T20:50:35.898Z"
+              "WhenOpened": "2026-08-26T20:50:35.898Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "AuthDbContext.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\AuthData\\AuthDbContext.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Infrastructure\\AuthData\\AuthDbContext.cs",
@@ -275,47 +285,51 @@
               "RelativeToolTip": "StudentCourseManagement.Infrastructure\\AuthData\\AuthDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-26T20:48:27.634Z"
+              "WhenOpened": "2026-08-26T20:48:27.634Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 7,
               "Title": "StudentsController.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.API\\Controllers\\StudentsController.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.API\\Controllers\\StudentsController.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.API\\Controllers\\StudentsController.cs",
               "RelativeToolTip": "StudentCourseManagement.API\\Controllers\\StudentsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:35:40.733Z"
+              "WhenOpened": "2026-08-25T10:35:40.733Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.API\\Program.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.API\\Program.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.API\\Program.cs",
               "RelativeToolTip": "StudentCourseManagement.API\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEAAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAAEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:33:09.536Z"
+              "WhenOpened": "2026-08-25T10:33:09.536Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 6,
               "Title": "CourseService.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Services\\CourseService.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\Services\\CourseService.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Services\\CourseService.cs",
               "RelativeToolTip": "StudentCourseManagement.Application\\Services\\CourseService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:32:49.909Z"
+              "WhenOpened": "2026-08-25T10:32:49.909Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 9,
               "Title": "StudentService.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Services\\StudentService.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\Services\\StudentService.cs",
@@ -323,35 +337,38 @@
               "RelativeToolTip": "StudentCourseManagement.Application\\Services\\StudentService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:31:30.497Z"
+              "WhenOpened": "2026-08-25T10:31:30.497Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 5,
               "Title": "CourseRepository.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\Repositories\\CourseRepository.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Infrastructure\\Repositories\\CourseRepository.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\Repositories\\CourseRepository.cs",
               "RelativeToolTip": "StudentCourseManagement.Infrastructure\\Repositories\\CourseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:25:47.037Z"
+              "WhenOpened": "2026-08-25T10:25:47.037Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 0,
               "Title": "StudentRepository.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\Repositories\\StudentRepository.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Infrastructure\\Repositories\\StudentRepository.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\Repositories\\StudentRepository.cs",
               "RelativeToolTip": "StudentCourseManagement.Infrastructure\\Repositories\\StudentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIgAAAAAAAAAAADwv+MAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:25:19.88Z"
+              "WhenOpened": "2026-08-25T10:25:19.88Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 29,
               "Title": "CourseMapping.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\Mappings\\CourseMapping.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Infrastructure\\Mappings\\CourseMapping.cs",
@@ -363,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 28,
               "Title": "StudentMapping.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Infrastructure\\Mappings\\StudentMapping.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Infrastructure\\Mappings\\StudentMapping.cs",
@@ -375,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 17,
               "Title": "ICourseService.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Interfaces\\ICourseService.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\Interfaces\\ICourseService.cs",
@@ -383,35 +400,38 @@
               "RelativeToolTip": "StudentCourseManagement.Application\\Interfaces\\ICourseService.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAswBQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:13:30.483Z"
+              "WhenOpened": "2026-08-25T10:13:30.483Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 15,
               "Title": "IStudentService.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Interfaces\\IStudentService.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\Interfaces\\IStudentService.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Interfaces\\IStudentService.cs",
               "RelativeToolTip": "StudentCourseManagement.Application\\Interfaces\\IStudentService.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:13:11.092Z"
+              "WhenOpened": "2026-08-25T10:13:11.092Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 18,
               "Title": "ICourseRepository.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Interfaces\\ICourseRepository.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\Interfaces\\ICourseRepository.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Interfaces\\ICourseRepository.cs",
               "RelativeToolTip": "StudentCourseManagement.Application\\Interfaces\\ICourseRepository.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:08:43.841Z"
+              "WhenOpened": "2026-08-25T10:08:43.841Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 16,
               "Title": "IStudentRepository.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\Interfaces\\IStudentRepository.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\Interfaces\\IStudentRepository.cs",
@@ -419,23 +439,25 @@
               "RelativeToolTip": "StudentCourseManagement.Application\\Interfaces\\IStudentRepository.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAqwA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:08:33.917Z"
+              "WhenOpened": "2026-08-25T10:08:33.917Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 20,
               "Title": "UpdateCourseDto.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\UpdateCourseDto.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\DTOs\\UpdateCourseDto.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\UpdateCourseDto.cs",
               "RelativeToolTip": "StudentCourseManagement.Application\\DTOs\\UpdateCourseDto.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAqwA8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:08:19.432Z"
+              "WhenOpened": "2026-08-25T10:08:19.432Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 25,
               "Title": "CreateCourseDto.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\CreateCourseDto.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\DTOs\\CreateCourseDto.cs",
@@ -443,23 +465,25 @@
               "RelativeToolTip": "StudentCourseManagement.Application\\DTOs\\CreateCourseDto.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAUwA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:08:04.603Z"
+              "WhenOpened": "2026-08-25T10:08:04.603Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "CourseDto.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\CourseDto.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\DTOs\\CourseDto.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\CourseDto.cs",
               "RelativeToolTip": "StudentCourseManagement.Application\\DTOs\\CourseDto.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAgwBEAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:07:49.546Z"
+              "WhenOpened": "2026-08-25T10:07:49.546Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 19,
               "Title": "UpdateStudentDto.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\UpdateStudentDto.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\DTOs\\UpdateStudentDto.cs",
@@ -467,11 +491,12 @@
               "RelativeToolTip": "StudentCourseManagement.Application\\DTOs\\UpdateStudentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:07:34.062Z"
+              "WhenOpened": "2026-08-25T10:07:34.062Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 24,
               "Title": "CreateStudentDto.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\CreateStudentDto.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\DTOs\\CreateStudentDto.cs",
@@ -479,11 +504,12 @@
               "RelativeToolTip": "StudentCourseManagement.Application\\DTOs\\CreateStudentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:07:16.325Z"
+              "WhenOpened": "2026-08-25T10:07:16.325Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 21,
               "Title": "StudentDto.cs",
               "DocumentMoniker": "C:\\Users\\sarah\\OneDrive\\Desktop\\Internship 2\\StudentCourseManagement\\StudentCourseManagement.Application\\DTOs\\StudentDto.cs",
               "RelativeDocumentMoniker": "StudentCourseManagement.Application\\DTOs\\StudentDto.cs",
@@ -491,7 +517,8 @@
               "RelativeToolTip": "StudentCourseManagement.Application\\DTOs\\StudentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-25T10:06:50.372Z"
+              "WhenOpened": "2026-08-25T10:06:50.372Z",
+              "EditorCaption": ""
             }
           ]
         }

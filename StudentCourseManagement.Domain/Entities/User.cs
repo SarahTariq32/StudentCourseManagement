@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +15,9 @@ namespace StudentCourseManagement.Domain.Entities
         public string PasswordHash { get; set; } = null!;
 
         public string Role { get; set; } = null!;
+
+        public string? RefreshToken { get; set; }
+
+        public DateTime? RefreshTokenExpiryTime { get; set; }
     }
 }

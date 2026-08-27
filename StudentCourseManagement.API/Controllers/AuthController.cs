@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using StudentCourseManagement.Application.DTOs;
 using StudentCourseManagement.Application.Interfaces;
 
@@ -33,6 +33,17 @@ public class AuthController : ControllerBase
 
         if (result == null)
             return Unauthorized("Invalid username or password.");
+
+        return Ok(result);
+    }
+
+    [HttpPost("refresh")]
+    public async Task<IActionResult> Refresh(RefreshTokenDto dto)
+    {
+        var result = await _authService.RefreshTokenAsync(dto);
+
+        if (result == null)
+            return Unauthorized("Invalid or expired refresh token.");
 
         return Ok(result);
     }

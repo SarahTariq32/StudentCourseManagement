@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,13 +28,18 @@ public class UserRepository : IUserRepository
         if (user == null)
             return null;
 
-        return new User
-        {
-            Id = user.Id,
-            Username = user.Username,
-            PasswordHash = user.PasswordHash,
-            Role = user.Role
-        };
+        return MapToDomain(user);
+    }
+
+    public async Task<User?> GetByRefreshTokenAsync(string refreshToken)
+    {
+        var user = await _context.UsersData
+            .FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+
+        if (user == null)
+            return null;
+
+        return MapToDomain(user);
     }
 
     public async Task AddAsync(User user)
@@ -49,4 +54,28 @@ public class UserRepository : IUserRepository
         await _context.UsersData.AddAsync(entity);
         await _context.SaveChangesAsync();
     }
+
+    public async Task UpdateAsync(User user)
+    {
+        var entity = await _context.UsersData
+            .FirstOrDefaultAsync(u => u.Id == user.Id);
+
+        if (entity == null)
+            return;
+
+        entity.RefreshToken = user.RefreshToken;
+        entity.RefreshTokenExpiryTime = user.RefreshTokenExpiryTime;
+
+        await _context.SaveChangesAsync();
+    }
+
+    private static User MapToDomain(UsersDatum entity) => new User
+    {
+        Id = entity.Id,
+        Username = entity.Username,
+        PasswordHash = entity.PasswordHash,
+        Role = entity.Role,
+        RefreshToken = entity.RefreshToken,
+        RefreshTokenExpiryTime = entity.RefreshTokenExpiryTime
+    };
 }
