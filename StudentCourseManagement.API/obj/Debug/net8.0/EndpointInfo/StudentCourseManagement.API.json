@@ -423,8 +423,7 @@
             "nullable": true
           },
           "role": {
-            "type": "string",
-            "nullable": true
+            "$ref": "#/components/schemas/UserRole"
           }
         },
         "additionalProperties": false
@@ -464,6 +463,13 @@
           }
         },
         "additionalProperties": false
+      },
+      "UserRole": {
+        "enum": [
+          "Student",
+          "Admin"
+        ],
+        "type": "string"
       }
     },
     "securitySchemes": {

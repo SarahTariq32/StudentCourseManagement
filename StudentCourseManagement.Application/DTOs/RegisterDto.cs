@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StudentCourseManagement.Domain.Enums;
 
 namespace StudentCourseManagement.Application.DTOs
 {
@@ -10,6 +11,6 @@ namespace StudentCourseManagement.Application.DTOs
     {
         public string Username { get; set; } = null!;
         public string Password { get; set; } = null!;
-        public string Role { get; set; } = "Student";
+        public UserRole Role { get; set; } = UserRole.Student;
     }
 }

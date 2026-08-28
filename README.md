@@ -1,87 +1,82 @@
 # StudentCourseManagement
 
-A Student Course Management Web API built with **ASP.NET Core 8**, **Entity Framework Core**, and **Microsoft SQL Server**, following the principles of **Clean Architecture**.
-
-The project demonstrates a layered backend architecture with separation of concerns between API, Application logic, Domain entities, Infrastructure, and **JWT-based Role-Based Access Control (RBAC)**.
-
----
+A Student Course Management Web API built with **ASP.NET Core 8**, **Entity Framework Core**, and **Microsoft SQL Server**, following **Clean Architecture** principles.
 
 ## Tech Stack
 
-- **.NET 8 / ASP.NET Core Web API**
-- **C#**
-- **Entity Framework Core 8**
-- **Microsoft SQL Server** (Database First approach)
-- **JWT (JSON Web Token) Authentication**
-- **Role-Based Access Control (RBAC)**
-- **Swagger** (with Bearer Token Authentication)
-- **Repository Pattern & DTOs**
-- **Clean Architecture**
-
----
+- .NET 8 / ASP.NET Core Web API
+- C#
+- Entity Framework Core 8
+- Microsoft SQL Server
+- JWT Authentication & Authorization
+- FluentValidation
+- Swagger / OpenAPI
+- Repository Pattern & DTOs
+- Clean Architecture
 
 ## Architecture
 
-The solution is structured into four Clean Architecture layers:
-
-```
+```text
 StudentCourseManagement/
-├── StudentCourseManagement.API          # Web API Controllers, Auth & Middleware
-├── StudentCourseManagement.Application  # Services, DTOs, Interfaces, Business Logic
-├── StudentCourseManagement.Domain       # Entities & Core Domain Models
-└── StudentCourseManagement.Infrastructure # EF Core DbContext, Repositories & Mappings
+├── StudentCourseManagement.API
+├── StudentCourseManagement.Application
+├── StudentCourseManagement.Domain
+└── StudentCourseManagement.Infrastructure
 ```
 
----
+- **API** — Controllers and HTTP request handling
+- **Application** — Services, DTOs, interfaces, and business logic
+- **Domain** — Core entities and domain models
+- **Infrastructure** — Database access, EF Core, repositories, and mappings
 
-## Authentication & Role-Based Access Control (RBAC)
+## Main Features
 
-Authentication is handled via **JWT tokens**. The application supports two primary roles stored in the `UsersData` table (`Role` claim):
-
-### 1. Admin Role (`Admin` / `admin`)
-- **Full Access**: Has permission to execute all CRUD operations on both **Students** and **Courses** endpoints.
-
-### 2. Student Role (`Student` / `student`)
-- **Self-Service Access**: Allowed to view (`GET /api/Students/{id}`) and update (`PUT /api/Students/{id}`) **only their own student profile**.
-- **Resource Ownership Verification**: Verification matches the logged-in token's username against the student entity's `Name` in a space-insensitive and case-insensitive manner (e.g. JWT username `"saratariq"` matches student name `"Sara Tariq"`).
-- **Restricted Endpoints**:
-  - Cannot view all students (`GET /api/Students`) -> Returns `403 Forbidden`
-  - Cannot create new students (`POST /api/Students`) -> Returns `403 Forbidden`
-  - Cannot delete students (`DELETE /api/Students/{id}`) -> Returns `403 Forbidden`
-  - Cannot view or edit another student's record -> Returns `403 Forbidden`
-  - Cannot access Course management (`/api/Courses`) -> Returns `403 Forbidden`
-
----
+- User registration and login with JWT authentication
+- Role-based access for Admin and Student users
+- Student and Course CRUD operations
+- Student-specific access to their own profile
+- Refresh token support for renewing expired access tokens
+- DTO validation using FluentValidation
+- Global exception handling with application logging
+- Entity Framework Core with SQL Server
+- Repository and service-based architecture
+- Swagger API documentation and testing
 
 ## API Endpoints
 
-| Area | HTTP Method | Endpoint | Authorization | Description |
-| :--- | :---: | :--- | :--- | :--- |
-| **Auth** | `POST` | `/api/Auth/register` | Public | Register a new user |
-| **Auth** | `POST` | `/api/Auth/login` | Public | Authenticate and obtain JWT token |
-| **Courses** | `GET` | `/api/Courses` | Admin | Retrieve all courses |
-| **Courses** | `GET` | `/api/Courses/{id}` | Admin | Retrieve course by ID |
-| **Courses** | `POST` | `/api/Courses` | Admin | Create a new course |
-| **Courses** | `PUT` | `/api/Courses/{id}` | Admin | Update an existing course |
-| **Courses** | `DELETE` | `/api/Courses/{id}` | Admin | Delete a course |
-| **Students** | `GET` | `/api/Students` | Admin | Retrieve all students |
-| **Students** | `GET` | `/api/Students/{id}` | Admin / Student (Own profile) | Retrieve student by ID |
-| **Students** | `POST` | `/api/Students` | Admin | Create a new student |
-| **Students** | `PUT` | `/api/Students/{id}` | Admin / Student (Own profile) | Update student by ID |
-| **Students** | `DELETE` | `/api/Students/{id}` | Admin | Delete a student |
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/Auth/register` | Register a user |
+| POST | `/api/Auth/login` | Login and receive authentication tokens |
+| POST | `/api/Auth/refresh` | Refresh an expired access token |
+| GET | `/api/Courses` | Get all courses |
+| GET | `/api/Courses/{id}` | Get a course |
+| POST | `/api/Courses` | Create a course |
+| PUT | `/api/Courses/{id}` | Update a course |
+| DELETE | `/api/Courses/{id}` | Delete a course |
+| GET | `/api/Students` | Get all students |
+| GET | `/api/Students/{id}` | Get a student |
+| POST | `/api/Students` | Create a student |
+| PUT | `/api/Students/{id}` | Update a student |
+| DELETE | `/api/Students/{id}` | Delete a student |
 
----
+Authorization for endpoints depends on the authenticated user's role and access permissions.
 
-## How to Run & Test
+## Database
 
-1. **Database Setup**: Ensure SQL Server is running and connection string in `appsettings.json` is configured.
-2. **Build & Run**:
-   ```bash
-   dotnet build StudentCourseManagement.sln
-   dotnet run --project StudentCourseManagement.API
-   ```
-3. **Swagger UI**:
-   - Navigate to `https://localhost:<port>/swagger`.
-   - Log in via `/api/Auth/login` to receive a JWT token.
-   - Click the **Authorize** button in Swagger UI and paste your JWT token.
-   - Test endpoints according to your assigned user role (`admin` or `student`).
+The application uses **Microsoft SQL Server** with Entity Framework Core for data access. Database configuration is provided through application configuration rather than hardcoded values.
+
+## Running the Project
+
+Configure the SQL Server connection string and JWT settings in `appsettings.json` or environment configuration.
+
+```bash
+dotnet build StudentCourseManagement.sln
+dotnet run --project StudentCourseManagement.API
+```
+
+Then open Swagger:
+
+```text
+https://localhost:<port>/swagger
+```

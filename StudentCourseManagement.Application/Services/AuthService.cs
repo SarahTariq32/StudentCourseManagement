@@ -1,18 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using StudentCourseManagement.Application.DTOs;
 using StudentCourseManagement.Application.Interfaces;
 using StudentCourseManagement.Domain.Entities;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 
 namespace StudentCourseManagement.Application.Services;
 
@@ -70,80 +69,95 @@ public class AuthService : IAuthService
         if (result == PasswordVerificationResult.Failed)
             return null;
 
-        var accessToken = GenerateAccessToken(user);
-        var refreshToken = GenerateRefreshToken();
+        var claims = new[]
+        {
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim(ClaimTypes.Name, user.Username),
+            new Claim(ClaimTypes.Role, user.Role.ToString())
+        };
 
-        // Persist refresh token to the user record
+        var jwtKey = _configuration["Jwt:Key"]
+            ?? throw new InvalidOperationException("JWT Secret Key 'Jwt:Key' is not configured. Please define it in appsettings.json or as an environment variable.");
+
+        var key = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(jwtKey));
+
+        var credentials = new SigningCredentials(
+            key,
+            SecurityAlgorithms.HmacSha256);
+
+        // Keep the access-token lifetime at 5 minutes for testing
+        var token = new JwtSecurityToken(
+            claims: claims,
+            expires: DateTime.UtcNow.AddMinutes(5),
+            signingCredentials: credentials);
+
+        // Generate secure 64-byte refresh token with 7-day lifetime
+        var refreshToken = GenerateSecureRefreshToken();
         user.RefreshToken = refreshToken;
         user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+
         await _userRepository.UpdateAsync(user);
 
         return new AuthResponseDto
         {
-            Token = accessToken,
-            RefreshToken = refreshToken,
+            Token = new JwtSecurityTokenHandler().WriteToken(token),
+            RefreshToken = user.RefreshToken,
             RefreshTokenExpiryTime = user.RefreshTokenExpiryTime.Value
         };
     }
 
     public async Task<AuthResponseDto?> RefreshTokenAsync(RefreshTokenDto dto)
     {
-        // Find user by the provided refresh token
-        var user = await _userRepository.GetByRefreshTokenAsync(dto.RefreshToken);
+        var user = await _userRepository
+            .GetByRefreshTokenAsync(dto.RefreshToken);
 
-        if (user == null)
+        if (user == null || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
             return null;
-
-        // Validate the refresh token is still active
-        if (user.RefreshTokenExpiryTime == null || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
-            return null;
-
-        // Issue a new access token and rotate the refresh token
-        var newAccessToken = GenerateAccessToken(user);
-        var newRefreshToken = GenerateRefreshToken();
-
-        user.RefreshToken = newRefreshToken;
-        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
-        await _userRepository.UpdateAsync(user);
-
-        return new AuthResponseDto
-        {
-            Token = newAccessToken,
-            RefreshToken = newRefreshToken,
-            RefreshTokenExpiryTime = user.RefreshTokenExpiryTime.Value
-        };
-    }
-
-    // ─── Private Helpers ─────────────────────────────────────────────────────
-
-    private string GenerateAccessToken(User user)
-    {
-        var jwtKey = _configuration["Jwt:Key"]
-            ?? throw new InvalidOperationException("JWT Secret Key 'Jwt:Key' is not configured.");
-
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
-        var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var claims = new[]
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new Claim(ClaimTypes.Name, user.Username),
-            new Claim(ClaimTypes.Role, user.Role)
+            new Claim(ClaimTypes.Role, user.Role.ToString())
         };
 
+        var jwtKey = _configuration["Jwt:Key"]
+            ?? throw new InvalidOperationException("JWT Secret Key 'Jwt:Key' is not configured. Please define it in appsettings.json or as an environment variable.");
+
+        var key = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(jwtKey));
+
+        var credentials = new SigningCredentials(
+            key,
+            SecurityAlgorithms.HmacSha256);
+
+        // Keep the access-token lifetime at 5 minutes for testing
         var token = new JwtSecurityToken(
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(2),
+            expires: DateTime.UtcNow.AddMinutes(5),
             signingCredentials: credentials);
 
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        // Generate a new secure refresh token (rotation) with a new 7-day lifetime
+        var newRefreshToken = GenerateSecureRefreshToken();
+        user.RefreshToken = newRefreshToken;
+        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+
+        await _userRepository.UpdateAsync(user);
+
+        return new AuthResponseDto
+        {
+            Token = new JwtSecurityTokenHandler().WriteToken(token),
+            RefreshToken = user.RefreshToken,
+            RefreshTokenExpiryTime = user.RefreshTokenExpiryTime.Value
+        };
     }
 
-    private static string GenerateRefreshToken()
+    private static string GenerateSecureRefreshToken()
     {
-        var randomBytes = new byte[64];
+        var randomNumber = new byte[64];
         using var rng = RandomNumberGenerator.Create();
-        rng.GetBytes(randomBytes);
-        return Convert.ToBase64String(randomBytes);
+        rng.GetBytes(randomNumber);
+        return Convert.ToBase64String(randomNumber);
     }
 }

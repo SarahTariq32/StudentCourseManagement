@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using StudentCourseManagement.Application.Validators;
+using StudentCourseManagement.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -60,8 +61,6 @@ builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
-//var jwtKey = builder.Configuration["Jwt:Key"] 
-//    ?? "StudentCourseManagement-Development-Key-2026-SuperSecretKey!";
 
 var jwtKey = builder.Configuration["Jwt:Key"]
     ?? throw new InvalidOperationException("JWT Secret Key 'Jwt:Key' is not configured. Please define it in appsettings.json or as an environment variable.");
@@ -87,6 +86,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+
+// Enable Global Exception Handler early to intercept pipeline errors
+app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
