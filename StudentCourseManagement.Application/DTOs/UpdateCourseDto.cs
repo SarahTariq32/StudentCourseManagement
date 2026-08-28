@@ -12,6 +12,5 @@ namespace StudentCourseManagement.Application.DTOs
 
         public int Credits { get; set; }
 
-        public int StudentId { get; set; }
     }
 }

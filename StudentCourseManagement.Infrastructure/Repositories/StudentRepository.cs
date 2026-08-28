@@ -98,6 +98,7 @@
 //            if (entity == null)
 //                return;
 
+//            // EF Core / SQL Server ON DELETE CASCADE automatically removes join records in StudentCourses
 //            _context.Students.Remove(entity);
 //            await _context.SaveChangesAsync();
 //        }
@@ -132,7 +133,8 @@ public class StudentRepository : IStudentRepository
         try
         {
             var students = await _context.Students
-                .Include(s => s.Courses)
+                .Include(s => s.StudentCourses)
+                .ThenInclude(sc => sc.Course)
                 .ToListAsync();
 
             return students.Select(s => s.ToDomain()).ToList();
@@ -148,7 +150,8 @@ public class StudentRepository : IStudentRepository
         try
         {
             var student = await _context.Students
-                .Include(s => s.Courses)
+                .Include(s => s.StudentCourses)
+                .ThenInclude(sc => sc.Course)
                 .FirstOrDefaultAsync(s => s.Id == id);
 
             return student?.ToDomain();
@@ -207,16 +210,6 @@ public class StudentRepository : IStudentRepository
 
             if (entity == null)
                 return;
-
-            // Load and remove all courses assigned to this student first to prevent constraint violation
-            var associatedCourses = await _context.Courses
-                .Where(c => c.StudentId == id)
-                .ToListAsync();
-
-            if (associatedCourses.Any())
-            {
-                _context.Courses.RemoveRange(associatedCourses);
-            }
 
             _context.Students.Remove(entity);
             await _context.SaveChangesAsync();

@@ -14,6 +14,6 @@ namespace StudentCourseManagement.Application.DTOs
 
         public int Credits { get; set; }
 
-        public int StudentId { get; set; }
+        public int EnrolledStudentsCount { get; set; }
     }
 }

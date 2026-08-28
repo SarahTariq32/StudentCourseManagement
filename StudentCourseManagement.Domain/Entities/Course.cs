@@ -4,15 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentCourseManagement.Domain.Entities
-{
-    public class Course
-    {
-        public int Id { get; set; }
-        public string Name { get; set; } = null!;
-        public int Credits { get; set; }
+// Course.cs
+namespace StudentCourseManagement.Domain.Entities;
 
-        public int StudentId { get; set; }
-        public Student Student { get; set; } = null!;
-    }
+public class Course
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = null!;
+    public int Credits { get; set; }
+    public ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
 }

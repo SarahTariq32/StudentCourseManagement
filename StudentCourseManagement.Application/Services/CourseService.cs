@@ -13,23 +13,47 @@ public class CourseService : ICourseService
         _repository = repository;
     }
 
+    // CourseService.cs
+
+    // Unfiltered listing for Admins
     public async Task<List<CourseDto>> GetAllAsync()
     {
         try
         {
             var courses = await _repository.GetAllAsync();
+            var courseDtos = new List<CourseDto>();
 
-            return courses.Select(c => new CourseDto
+            foreach (var c in courses)
             {
-                Id = c.Id,
-                Name = c.Name,
-                Credits = c.Credits,
-                StudentId = c.StudentId
-            }).ToList();
+                int enrolledCount = await _repository.GetEnrolledStudentCountAsync(c.Id);
+                courseDtos.Add(new CourseDto
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    Credits = c.Credits,
+                    EnrolledStudentsCount = enrolledCount
+                });
+            }
+
+            return courseDtos;
         }
         catch (Exception ex)
         {
             throw new Exception($"Error retrieving all courses: {ex.Message}", ex);
+        }
+    }
+
+    // Filtered listing for Students (Only courses with < 50 enrollments)
+    public async Task<List<CourseDto>> GetAvailableCoursesForStudentsAsync()
+    {
+        try
+        {
+            var allCourses = await GetAllAsync();
+            return allCourses.Where(c => c.EnrolledStudentsCount < 50).ToList();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Error retrieving available courses for students: {ex.Message}", ex);
         }
     }
 
@@ -42,12 +66,14 @@ public class CourseService : ICourseService
             if (course == null)
                 return null;
 
+            int enrolledCount = await _repository.GetEnrolledStudentCountAsync(course.Id);
+
             return new CourseDto
             {
                 Id = course.Id,
                 Name = course.Name,
                 Credits = course.Credits,
-                StudentId = course.StudentId
+                EnrolledStudentsCount = enrolledCount
             };
         }
         catch (Exception ex)
@@ -64,7 +90,6 @@ public class CourseService : ICourseService
             {
                 Name = dto.Name,
                 Credits = dto.Credits,
-                StudentId = dto.StudentId
             };
 
             var created = await _repository.AddAsync(course);
@@ -74,7 +99,6 @@ public class CourseService : ICourseService
                 Id = created.Id,
                 Name = created.Name,
                 Credits = created.Credits,
-                StudentId = created.StudentId
             };
         }
         catch (Exception ex)
@@ -94,7 +118,6 @@ public class CourseService : ICourseService
 
             course.Name = dto.Name;
             course.Credits = dto.Credits;
-            course.StudentId = dto.StudentId;
 
             await _repository.UpdateAsync(course);
 
@@ -123,5 +146,38 @@ public class CourseService : ICourseService
         {
             throw new Exception($"Error deleting course with ID {id}: {ex.Message}", ex);
         }
+    }
+    public async Task<(bool Success, string Message)> EnrollStudentAsync(int studentId, int courseId)
+    {
+        var course = await _repository.GetByIdAsync(courseId);
+        if (course == null)
+            return (false, "Course does not exist.");
+
+        // Rule 1: Prevent duplicate enrollment
+        bool isEnrolled = await _repository.IsStudentEnrolledAsync(studentId, courseId);
+        if (isEnrolled)
+            return (false, "Student is already enrolled in this course.");
+
+        // Rule 2: Max 7 Courses per Student Limit
+        int studentCourseCount = await _repository.GetStudentEnrolledCoursesCountAsync(studentId);
+        if (studentCourseCount >= 7)
+            return (false, "Enrollment failed: A student cannot enroll in more than 7 courses simultaneously.");
+
+        // Rule 3: Max 50 Students per Course Limit
+        int courseStudentCount = await _repository.GetEnrolledStudentCountAsync(courseId);
+        if (courseStudentCount >= 50)
+            return (false, "Enrollment failed: Course capacity reached (Maximum 50 students). Please contact an Admin for assistance.");
+
+        await _repository.EnrollStudentAsync(studentId, courseId);
+        return (true, "Successfully enrolled in the course.");
+    }
+
+    public async Task<bool> UnenrollStudentAsync(int studentId, int courseId)
+    {
+        bool isEnrolled = await _repository.IsStudentEnrolledAsync(studentId, courseId);
+        if (!isEnrolled) return false;
+
+        await _repository.UnenrollStudentAsync(studentId, courseId);
+        return true;
     }
 }

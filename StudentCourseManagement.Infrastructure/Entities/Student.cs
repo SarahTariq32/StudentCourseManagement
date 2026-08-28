@@ -13,5 +13,5 @@ public partial class Student
 
     public int Age { get; set; }
 
-    public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
+    public virtual ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
 }

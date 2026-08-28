@@ -11,8 +11,7 @@ public static class CourseMapping
         {
             Id = course.Id,
             Name = course.Name,
-            Credits = course.Credits,
-            StudentId = course.StudentId
+            Credits = course.Credits
         };
     }
 
@@ -22,8 +21,7 @@ public static class CourseMapping
         {
             Id = course.Id,
             Name = course.Name,
-            Credits = course.Credits,
-            StudentId = course.StudentId
+            Credits = course.Credits
         };
     }
 }

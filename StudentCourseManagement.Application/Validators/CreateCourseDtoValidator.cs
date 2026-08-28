@@ -14,7 +14,5 @@ public class CreateCourseDtoValidator : AbstractValidator<CreateCourseDto>
         RuleFor(x => x.Credits)
             .GreaterThan(0).WithMessage("Credits must be greater than 0.");
 
-        RuleFor(x => x.StudentId)
-            .GreaterThan(0).WithMessage("Valid Student ID is required.");
     }
 }

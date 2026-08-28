@@ -75,7 +75,6 @@ public class CourseRepository : ICourseRepository
 
             entity.Name = course.Name;
             entity.Credits = course.Credits;
-            entity.StudentId = course.StudentId;
 
             await _context.SaveChangesAsync();
         }
@@ -102,5 +101,43 @@ public class CourseRepository : ICourseRepository
         {
             throw new Exception($"Error deleting course with ID {id}: {ex.Message}", ex);
         }
+    }
+    // CourseRepository.cs (Additions to implementation)
+    public async Task<int> GetEnrolledStudentCountAsync(int courseId)
+    {
+        return await _context.StudentCourses.CountAsync(sc => sc.CourseId == courseId);
+    }
+
+    public async Task<bool> IsStudentEnrolledAsync(int studentId, int courseId)
+    {
+        return await _context.StudentCourses.AnyAsync(sc => sc.StudentId == studentId && sc.CourseId == courseId);
+    }
+
+    public async Task EnrollStudentAsync(int studentId, int courseId)
+    {
+        var enrollment = new Infrastructure.Entities.StudentCourse
+        {
+            StudentId = studentId,
+            CourseId = courseId,
+            EnrolledOn = DateTime.UtcNow
+        };
+        await _context.StudentCourses.AddAsync(enrollment);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task UnenrollStudentAsync(int studentId, int courseId)
+    {
+        var enrollment = await _context.StudentCourses
+            .FirstOrDefaultAsync(sc => sc.StudentId == studentId && sc.CourseId == courseId);
+
+        if (enrollment != null)
+        {
+            _context.StudentCourses.Remove(enrollment);
+            await _context.SaveChangesAsync();
+        }
+    }
+    public async Task<int> GetStudentEnrolledCoursesCountAsync(int studentId)
+    {
+        return await _context.StudentCourses.CountAsync(sc => sc.StudentId == studentId);
     }
 }

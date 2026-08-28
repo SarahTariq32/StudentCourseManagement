@@ -223,6 +223,70 @@
         }
       }
     },
+    "/api/Courses/{courseId}/enroll-student/{studentId}": {
+      "post": {
+        "tags": [
+          "Courses"
+        ],
+        "parameters": [
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Courses/{courseId}/unenroll-student/{studentId}": {
+      "delete": {
+        "tags": [
+          "Courses"
+        ],
+        "parameters": [
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Students": {
       "get": {
         "tags": [
@@ -347,6 +411,41 @@
           }
         }
       }
+    },
+    "/api/Students/available-courses": {
+      "get": {
+        "tags": [
+          "Students"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Students/enroll/{courseId}": {
+      "post": {
+        "tags": [
+          "Students"
+        ],
+        "parameters": [
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -359,10 +458,6 @@
             "nullable": true
           },
           "credits": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "studentId": {
             "type": "integer",
             "format": "int32"
           }
@@ -436,10 +531,6 @@
             "nullable": true
           },
           "credits": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "studentId": {
             "type": "integer",
             "format": "int32"
           }

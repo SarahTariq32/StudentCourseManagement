@@ -86,10 +86,9 @@ public class AuthService : IAuthService
             key,
             SecurityAlgorithms.HmacSha256);
 
-        // Keep the access-token lifetime at 5 minutes for testing
         var token = new JwtSecurityToken(
             claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(5),
+            expires: DateTime.UtcNow.AddHours(2),
             signingCredentials: credentials);
 
         // Generate secure 64-byte refresh token with 7-day lifetime

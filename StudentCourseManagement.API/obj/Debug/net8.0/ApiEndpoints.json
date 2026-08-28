@@ -75,6 +75,48 @@
   },
   {
     "ContainingType": "StudentCourseManagement.API.Controllers.CoursesController",
+    "Method": "AdminEnrollStudent",
+    "RelativePath": "api/Courses/{courseId}/enroll-student/{studentId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "studentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentCourseManagement.API.Controllers.CoursesController",
+    "Method": "AdminUnenrollStudent",
+    "RelativePath": "api/Courses/{courseId}/unenroll-student/{studentId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "studentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentCourseManagement.API.Controllers.CoursesController",
     "Method": "GetById",
     "RelativePath": "api/Courses/{id}",
     "HttpMethod": "GET",
@@ -199,6 +241,32 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentCourseManagement.API.Controllers.StudentsController",
+    "Method": "GetAvailableCourses",
+    "RelativePath": "api/Students/available-courses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentCourseManagement.API.Controllers.StudentsController",
+    "Method": "SelfEnroll",
+    "RelativePath": "api/Students/enroll/{courseId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseId",
         "Type": "System.Int32",
         "IsRequired": true
       }
