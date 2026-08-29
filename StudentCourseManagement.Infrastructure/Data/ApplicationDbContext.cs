@@ -19,6 +19,7 @@ public partial class ApplicationDbContext : DbContext
     public virtual DbSet<UsersDatum> UsersData { get; set; }
 
     public virtual DbSet<StudentCourse> StudentCourses { get; set; }
+    public virtual DbSet<EnrollmentRequest> EnrollmentRequests { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<StudentCourse>(entity =>
@@ -69,6 +70,21 @@ public partial class ApplicationDbContext : DbContext
                   .HasMaxLength(500);
 
             entity.Property(e => e.RefreshTokenExpiryTime);
+        });
+
+        modelBuilder.Entity<EnrollmentRequest>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Status).HasMaxLength(50);
+            entity.Property(e => e.Reason).HasMaxLength(500);
+
+            entity.HasOne(d => d.Student).WithMany()
+                .HasForeignKey(d => d.StudentId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne(d => d.Course).WithMany()
+                .HasForeignKey(d => d.CourseId)
+                .OnDelete(DeleteBehavior.Cascade);
         });
         OnModelCreatingPartial(modelBuilder);
     }

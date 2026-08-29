@@ -223,30 +223,10 @@
         }
       }
     },
-    "/api/Courses/{courseId}/enroll-student/{studentId}": {
-      "post": {
+    "/api/Courses/requests": {
+      "get": {
         "tags": [
           "Courses"
-        ],
-        "parameters": [
-          {
-            "name": "courseId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "studentId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -255,14 +235,14 @@
         }
       }
     },
-    "/api/Courses/{courseId}/unenroll-student/{studentId}": {
-      "delete": {
+    "/api/Courses/requests/{requestId}/process": {
+      "post": {
         "tags": [
           "Courses"
         ],
         "parameters": [
           {
-            "name": "courseId",
+            "name": "requestId",
             "in": "path",
             "required": true,
             "schema": {
@@ -271,12 +251,10 @@
             }
           },
           {
-            "name": "studentId",
-            "in": "path",
-            "required": true,
+            "name": "approve",
+            "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "boolean"
             }
           }
         ],
@@ -446,6 +424,68 @@
           }
         }
       }
+    },
+    "/api/Students/request-enrollment": {
+      "post": {
+        "tags": [
+          "Students"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEnrollmentRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEnrollmentRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEnrollmentRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Students/request-unenrollment": {
+      "post": {
+        "tags": [
+          "Students"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEnrollmentRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEnrollmentRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEnrollmentRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -460,6 +500,20 @@
           "credits": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateEnrollmentRequestDto": {
+        "type": "object",
+        "properties": {
+          "courseId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reason": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -507,6 +561,9 @@
         "additionalProperties": false
       },
       "RegisterDto": {
+        "required": [
+          "role"
+        ],
         "type": "object",
         "properties": {
           "username": {

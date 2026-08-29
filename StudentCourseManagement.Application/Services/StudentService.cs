@@ -15,45 +15,36 @@ public class StudentService : IStudentService
 
     public async Task<List<StudentDto>> GetAllAsync()
     {
-        try
+        var students = await _repository.GetAllAsync();
+        return students.Select(s => new StudentDto
         {
-            var students = await _repository.GetAllAsync();
-
-            return students.Select(s => new StudentDto
-            {
-                Id = s.Id,
-                Name = s.Name,
-                Email = s.Email,
-                Age = s.Age
-            }).ToList();
-        }
-        catch (Exception ex)
-        {
-            throw new Exception($"Error retrieving all students: {ex.Message}", ex);
-        }
+            Id = s.Id,
+            Name = s.Name,
+            Email = s.Email,
+            Age = s.Age,
+            EnrolledCourses = s.StudentCourses?
+                .Where(sc => sc.Course != null)
+                .Select(sc => sc.Course.Name)
+                .ToList() ?? new List<string>()
+        }).ToList();
     }
 
     public async Task<StudentDto?> GetByIdAsync(int id)
     {
-        try
-        {
-            var student = await _repository.GetByIdAsync(id);
+        var student = await _repository.GetByIdAsync(id);
+        if (student == null) return null;
 
-            if (student == null)
-                return null;
-
-            return new StudentDto
-            {
-                Id = student.Id,
-                Name = student.Name,
-                Email = student.Email,
-                Age = student.Age
-            };
-        }
-        catch (Exception ex)
+        return new StudentDto
         {
-            throw new Exception($"Error retrieving student with ID {id}: {ex.Message}", ex);
-        }
+            Id = student.Id,
+            Name = student.Name,
+            Email = student.Email,
+            Age = student.Age,
+            EnrolledCourses = student.StudentCourses?
+                .Where(sc => sc.Course != null)
+                .Select(sc => sc.Course.Name)
+                .ToList() ?? new List<string>()
+        };
     }
 
     public async Task<StudentDto> CreateAsync(CreateStudentDto dto)

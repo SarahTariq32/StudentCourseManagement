@@ -75,48 +75,6 @@
   },
   {
     "ContainingType": "StudentCourseManagement.API.Controllers.CoursesController",
-    "Method": "AdminEnrollStudent",
-    "RelativePath": "api/Courses/{courseId}/enroll-student/{studentId}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "courseId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "studentId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "StudentCourseManagement.API.Controllers.CoursesController",
-    "Method": "AdminUnenrollStudent",
-    "RelativePath": "api/Courses/{courseId}/unenroll-student/{studentId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "courseId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "studentId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "StudentCourseManagement.API.Controllers.CoursesController",
     "Method": "GetById",
     "RelativePath": "api/Courses/{id}",
     "HttpMethod": "GET",
@@ -164,6 +122,37 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentCourseManagement.API.Controllers.CoursesController",
+    "Method": "GetPendingRequests",
+    "RelativePath": "api/Courses/requests",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentCourseManagement.API.Controllers.CoursesController",
+    "Method": "ProcessRequest",
+    "RelativePath": "api/Courses/requests/{requestId}/process",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "approve",
+        "Type": "System.Boolean",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -268,6 +257,38 @@
       {
         "Name": "courseId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentCourseManagement.API.Controllers.StudentsController",
+    "Method": "RequestEnrollment",
+    "RelativePath": "api/Students/request-enrollment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "StudentCourseManagement.Application.DTOs.CreateEnrollmentRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentCourseManagement.API.Controllers.StudentsController",
+    "Method": "RequestUnenrollment",
+    "RelativePath": "api/Students/request-unenrollment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "StudentCourseManagement.Application.DTOs.CreateEnrollmentRequestDto",
         "IsRequired": true
       }
     ],

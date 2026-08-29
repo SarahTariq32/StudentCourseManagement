@@ -1,11 +1,6 @@
 ﻿using StudentCourseManagement.Application.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using StudentCourseManagement.Domain.Entities;
 
-// ICourseService.cs
 namespace StudentCourseManagement.Application.Interfaces;
 
 public interface ICourseService
@@ -19,4 +14,9 @@ public interface ICourseService
 
     Task<(bool Success, string Message)> EnrollStudentAsync(int studentId, int courseId);
     Task<bool> UnenrollStudentAsync(int studentId, int courseId);
+
+    // --- ENROLLMENT REQUEST METHODS ---
+    Task<(bool Success, string Message)> CreateEnrollmentRequestAsync(int studentId, int courseId, string requestType, string? reason);
+    Task<List<EnrollmentRequestResponseDto>> GetPendingEnrollmentRequestsAsync();
+    Task<(bool Success, string Message)> ProcessEnrollmentRequestAsync(int requestId, bool approve);
 }

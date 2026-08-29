@@ -259,4 +259,54 @@ public class StudentsController : ControllerBase
         var cleaned2 = new string(name2.Where(c => !char.IsWhiteSpace(c)).ToArray());
         return string.Equals(cleaned1, cleaned2, StringComparison.OrdinalIgnoreCase);
     }
+
+    // Enroll Request
+    [HttpPost("request-enrollment")]
+    [Authorize(Roles = "Student,student")]
+    public async Task<IActionResult> RequestEnrollment([FromBody] CreateEnrollmentRequestDto dto)
+    {
+        if (dto == null || dto.CourseId <= 0)
+            return BadRequest("Valid course ID is required.");
+
+        var loggedInUsername = User.FindFirst(ClaimTypes.Name)?.Value;
+        if (string.IsNullOrEmpty(loggedInUsername))
+            return Unauthorized();
+
+        var allStudents = await _studentService.GetAllAsync();
+        var student = allStudents.FirstOrDefault(s => AreNamesMatching(s.Name, loggedInUsername));
+
+        if (student == null)
+            return BadRequest($"No student profile linked to '{loggedInUsername}'.");
+
+        var result = await _courseService.CreateEnrollmentRequestAsync(student.Id, dto.CourseId, "Enroll", dto.Reason);
+        if (!result.Success)
+            return BadRequest(result.Message);
+
+        return Ok(result.Message);
+    }
+
+    // Unenroll Request
+    [HttpPost("request-unenrollment")]
+    [Authorize(Roles = "Student,student")]
+    public async Task<IActionResult> RequestUnenrollment([FromBody] CreateEnrollmentRequestDto dto)
+    {
+        if (dto == null || dto.CourseId <= 0)
+            return BadRequest("Valid course ID is required.");
+
+        var loggedInUsername = User.FindFirst(ClaimTypes.Name)?.Value;
+        if (string.IsNullOrEmpty(loggedInUsername))
+            return Unauthorized();
+
+        var allStudents = await _studentService.GetAllAsync();
+        var student = allStudents.FirstOrDefault(s => AreNamesMatching(s.Name, loggedInUsername));
+
+        if (student == null)
+            return BadRequest($"No student profile linked to '{loggedInUsername}'.");
+
+        var result = await _courseService.CreateEnrollmentRequestAsync(student.Id, dto.CourseId, "Unenroll", dto.Reason);
+        if (!result.Success)
+            return BadRequest(result.Message);
+
+        return Ok(result.Message);
+    }
 }

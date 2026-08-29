@@ -7,13 +7,37 @@ public static class StudentMapping
 {
     public static DomainStudent ToDomain(this InfrastructureStudent student)
     {
-        return new DomainStudent
+        var domainStudent = new DomainStudent
         {
             Id = student.Id,
             Name = student.Name,
             Email = student.Email,
             Age = student.Age
         };
+
+        // NEW: Map the join table records and nested course names into the domain model
+        if (student.StudentCourses != null && student.StudentCourses.Any())
+        {
+            foreach (var sc in student.StudentCourses)
+            {
+                if (sc.Course != null)
+                {
+                    domainStudent.StudentCourses.Add(new Domain.Entities.StudentCourse
+                    {
+                        StudentId = sc.StudentId,
+                        CourseId = sc.CourseId,
+                        Course = new Domain.Entities.Course
+                        {
+                            Id = sc.Course.Id,
+                            Name = sc.Course.Name,
+                            Credits = sc.Course.Credits
+                        }
+                    });
+                }
+            }
+        }
+
+        return domainStudent;
     }
 
     public static InfrastructureStudent ToInfrastructure(this DomainStudent student)
