@@ -22,8 +22,7 @@ public class CourseRepository : ICourseRepository
     {
         try
         {
-            var courses = await _context.Courses.ToListAsync();
-
+            var courses = await _context.Courses.AsNoTracking().ToListAsync();
             return courses.Select(c => c.ToDomain()).ToList();
         }
         catch (Exception ex)
@@ -37,6 +36,7 @@ public class CourseRepository : ICourseRepository
         try
         {
             var course = await _context.Courses
+                .AsNoTracking()
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             return course?.ToDomain();
@@ -103,7 +103,7 @@ public class CourseRepository : ICourseRepository
             throw new Exception($"Error deleting course with ID {id}: {ex.Message}", ex);
         }
     }
-    // CourseRepository.cs (Additions to implementation)
+
     public async Task<int> GetEnrolledStudentCountAsync(int courseId)
     {
         return await _context.StudentCourses.CountAsync(sc => sc.CourseId == courseId);
@@ -113,8 +113,6 @@ public class CourseRepository : ICourseRepository
     {
         return await _context.StudentCourses.AnyAsync(sc => sc.StudentId == studentId && sc.CourseId == courseId);
     }
-
-    // CourseRepository.cs
 
     public async Task EnrollStudentAsync(int studentId, int courseId)
     {
@@ -160,11 +158,11 @@ public class CourseRepository : ICourseRepository
 
         await _context.SaveChangesAsync();
     }
+
     public async Task<int> GetStudentEnrolledCoursesCountAsync(int studentId)
     {
         return await _context.StudentCourses.CountAsync(sc => sc.StudentId == studentId);
     }
-
 
     public async Task<(bool Success, string Message)> CreateEnrollmentRequestAsync(int studentId, int courseId, string requestType, string? reason)
     {
@@ -205,6 +203,7 @@ public class CourseRepository : ICourseRepository
     public async Task<List<EnrollmentRequestResponseDto>> GetPendingEnrollmentRequestsAsync()
     {
         return await _context.EnrollmentRequests
+            .AsNoTracking()
             .Include(r => r.Student)
             .Include(r => r.Course)
             .Where(r => r.Status == "Pending")
@@ -215,7 +214,6 @@ public class CourseRepository : ICourseRepository
                 StudentName = r.Student.Name,
                 CourseId = r.CourseId,
                 CourseName = r.Course.Name,
-                // Explicitly label both request types clearly
                 RequestType = r.RequestType == "Unenroll" ? "Unenrollment Request" : "Enrollment Request",
                 Reason = r.Reason ?? string.Empty,
                 Status = r.Status,
@@ -225,12 +223,10 @@ public class CourseRepository : ICourseRepository
 
     public async Task<(bool Success, string Message)> ProcessEnrollmentRequestAsync(int requestId, bool approve)
     {
-        // 1. Find the request ticket
         var request = await _context.EnrollmentRequests.FirstOrDefaultAsync(r => r.Id == requestId);
         if (request == null)
             return (false, $"Request ticket #{requestId} was not found or has already been processed.");
 
-        // 2. Handle Rejection: Simply delete the request ticket and inform the Admin
         if (!approve)
         {
             _context.EnrollmentRequests.Remove(request);
@@ -238,10 +234,8 @@ public class CourseRepository : ICourseRepository
             return (true, $"Request #{requestId} was rejected and removed from the queue.");
         }
 
-        // 3. Handle Approval: Auto-detect RequestType and execute appropriate action
         if (request.RequestType == "Enroll")
         {
-            // Check duplication
             bool isEnrolled = await _context.StudentCourses.AnyAsync(sc => sc.StudentId == request.StudentId && sc.CourseId == request.CourseId);
             if (isEnrolled)
             {
@@ -250,17 +244,14 @@ public class CourseRepository : ICourseRepository
                 return (true, "Student was already enrolled. Request ticket cleared from queue.");
             }
 
-            // Check Max 7 Courses Limit
             int studentCourseCount = await _context.StudentCourses.CountAsync(sc => sc.StudentId == request.StudentId);
             if (studentCourseCount >= 7)
                 return (false, "Cannot approve: Student has already reached the maximum limit of 7 enrolled courses.");
 
-            // Check Max 50 Capacity Limit
             int courseStudentCount = await _context.StudentCourses.CountAsync(sc => sc.CourseId == request.CourseId);
             if (courseStudentCount >= 50)
                 return (false, "Cannot approve: Course capacity has reached the maximum of 50 students.");
 
-            // Add enrollment record
             var enrollment = new StudentCourseManagement.Infrastructure.Entities.StudentCourse
             {
                 StudentId = request.StudentId,
@@ -280,10 +271,66 @@ public class CourseRepository : ICourseRepository
             }
         }
 
-        // 4. Clean up ticket: Remove satisfied request from DB so it leaves the queue
         _context.EnrollmentRequests.Remove(request);
         await _context.SaveChangesAsync();
 
         return (true, $"Request #{requestId} approved! Student successfully {request.RequestType.ToLower()}ed.");
+    }
+
+    public async Task<PagedResultDto<Course>> GetPagedAsync(CourseQueryParameters queryParams)
+    {
+        var query = _context.Courses
+            .AsNoTracking()
+            .Include(c => c.StudentCourses)
+            .AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(queryParams.SearchTerm))
+        {
+            var term = queryParams.SearchTerm.Trim().ToLower();
+            query = query.Where(c => c.Name.ToLower().Contains(term));
+        }
+
+        if (queryParams.MinCredits.HasValue)
+        {
+            query = query.Where(c => c.Credits >= queryParams.MinCredits.Value);
+        }
+
+        if (queryParams.MaxCredits.HasValue)
+        {
+            query = query.Where(c => c.Credits <= queryParams.MaxCredits.Value);
+        }
+
+        query = queryParams.SortBy.ToLower() switch
+        {
+            "credits" => queryParams.IsDescending ? query.OrderByDescending(c => c.Credits) : query.OrderBy(c => c.Credits),
+            "id" => queryParams.IsDescending ? query.OrderByDescending(c => c.Id) : query.OrderBy(c => c.Id),
+            _ => queryParams.IsDescending ? query.OrderByDescending(c => c.Name) : query.OrderBy(c => c.Name)
+        };
+
+        int totalCount = await query.CountAsync();
+
+        var items = await query
+            .Skip((queryParams.PageIndex - 1) * queryParams.PageSize)
+            .Take(queryParams.PageSize)
+            .ToListAsync();
+
+        return new PagedResultDto<Course>
+        {
+            Items = items.Select(c => c.ToDomain()).ToList(),
+            PageIndex = queryParams.PageIndex,
+            PageSize = queryParams.PageSize,
+            TotalCount = totalCount
+        };
+    }
+
+    public async Task<List<Course>> GetAvailableCoursesForStudentsAsync()
+    {
+        var courses = await _context.Courses
+            .AsNoTracking()
+            .Include(c => c.StudentCourses)
+            .Where(c => c.StudentCourses.Count < 50)
+            .ToListAsync();
+
+        return courses.Select(c => c.ToDomain()).ToList();
     }
 }

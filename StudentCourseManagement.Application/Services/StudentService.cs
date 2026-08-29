@@ -23,10 +23,37 @@ public class StudentService : IStudentService
             Email = s.Email,
             Age = s.Age,
             EnrolledCourses = s.StudentCourses?
-                .Where(sc => sc.Course != null)
+                .Where(sc => sc.Course != null && !string.IsNullOrWhiteSpace(sc.Course.Name))
                 .Select(sc => sc.Course.Name)
+                .Distinct()
                 .ToList() ?? new List<string>()
         }).ToList();
+    }
+
+    public async Task<PagedResultDto<StudentDto>> GetPagedAsync(StudentQueryParameters queryParams)
+    {
+        var pagedResult = await _repository.GetPagedAsync(queryParams);
+
+        var dtos = pagedResult.Items.Select(s => new StudentDto
+        {
+            Id = s.Id,
+            Name = s.Name,
+            Email = s.Email,
+            Age = s.Age,
+            EnrolledCourses = s.StudentCourses?
+                .Where(sc => sc.Course != null && !string.IsNullOrWhiteSpace(sc.Course.Name))
+                .Select(sc => sc.Course.Name)
+                .Distinct()
+                .ToList() ?? new List<string>()
+        }).ToList();
+
+        return new PagedResultDto<StudentDto>
+        {
+            Items = dtos,
+            PageIndex = pagedResult.PageIndex,
+            PageSize = pagedResult.PageSize,
+            TotalCount = pagedResult.TotalCount
+        };
     }
 
     public async Task<StudentDto?> GetByIdAsync(int id)
@@ -41,78 +68,52 @@ public class StudentService : IStudentService
             Email = student.Email,
             Age = student.Age,
             EnrolledCourses = student.StudentCourses?
-                .Where(sc => sc.Course != null)
+                .Where(sc => sc.Course != null && !string.IsNullOrWhiteSpace(sc.Course.Name))
                 .Select(sc => sc.Course.Name)
+                .Distinct()
                 .ToList() ?? new List<string>()
         };
     }
 
     public async Task<StudentDto> CreateAsync(CreateStudentDto dto)
     {
-        try
+        var student = new Student
         {
-            var student = new Student
-            {
-                Name = dto.Name,
-                Email = dto.Email,
-                Age = dto.Age
-            };
+            Name = dto.Name,
+            Email = dto.Email,
+            Age = dto.Age
+        };
 
-            var created = await _repository.AddAsync(student);
+        var created = await _repository.AddAsync(student);
 
-            return new StudentDto
-            {
-                Id = created.Id,
-                Name = created.Name,
-                Email = created.Email,
-                Age = created.Age
-            };
-        }
-        catch (Exception ex)
+        return new StudentDto
         {
-            throw new Exception($"Error creating student: {ex.Message}", ex);
-        }
+            Id = created.Id,
+            Name = created.Name,
+            Email = created.Email,
+            Age = created.Age
+        };
     }
 
     public async Task<bool> UpdateAsync(int id, UpdateStudentDto dto)
     {
-        try
-        {
-            var student = await _repository.GetByIdAsync(id);
+        var student = await _repository.GetByIdAsync(id);
+        if (student == null) return false;
 
-            if (student == null)
-                return false;
+        student.Name = dto.Name;
+        student.Email = dto.Email;
+        student.Age = dto.Age;
 
-            student.Name = dto.Name;
-            student.Email = dto.Email;
-            student.Age = dto.Age;
-
-            await _repository.UpdateAsync(student);
-
-            return true;
-        }
-        catch (Exception ex)
-        {
-            throw new Exception($"Error updating student with ID {id}: {ex.Message}", ex);
-        }
+        await _repository.UpdateAsync(student);
+        return true;
     }
 
     public async Task<bool> DeleteAsync(int id)
     {
-        try
-        {
-            var student = await _repository.GetByIdAsync(id);
+        var student = await _repository.GetByIdAsync(id);
+        if (student == null) return false;
 
-            if (student == null)
-                return false;
-
-            await _repository.DeleteAsync(id);
-
-            return true;
-        }
-        catch (Exception ex)
-        {
-            throw new Exception($"Error deleting student with ID {id}: {ex.Message}", ex);
-        }
+        await _repository.DeleteAsync(id);
+        return true;
     }
 }

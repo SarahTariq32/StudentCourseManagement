@@ -19,8 +19,8 @@ public class EnrollmentRequestResponseDto
     public string StudentName { get; set; } = null!;
     public int CourseId { get; set; }
     public string CourseName { get; set; } = null!;
-    public string RequestType { get; set; } = null!; // "Enroll" or "Unenroll"
+    public string RequestType { get; set; } = null!; 
     public string Reason { get; set; } = null!;
-    public string Status { get; set; } = null!; // "Pending", "Approved", "Rejected"
+    public string Status { get; set; } = null!; 
     public DateTime RequestedOn { get; set; }
 }

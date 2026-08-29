@@ -15,7 +15,7 @@ public class EnrollmentRequest
     public int CourseId { get; set; }
     public virtual Course Course { get; set; } = null!;
 
-    public string RequestType { get; set; } = "Enroll"; // "Enroll" or "Unenroll"
+    public string RequestType { get; set; } = "Enroll";
     public string? Reason { get; set; }
     public string Status { get; set; } = "Pending";
     public DateTime RequestedOn { get; set; } = DateTime.UtcNow;

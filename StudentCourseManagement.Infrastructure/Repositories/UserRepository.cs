@@ -1,85 +1,3 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using Microsoft.EntityFrameworkCore;
-//using StudentCourseManagement.Application.Interfaces;
-//using StudentCourseManagement.Domain.Entities;
-//using StudentCourseManagement.Infrastructure.AuthEntities;
-//using StudentCourseManagement.Infrastructure.Data;
-
-//namespace StudentCourseManagement.Infrastructure.Repositories;
-
-//public class UserRepository : IUserRepository
-//{
-//    private readonly ApplicationDbContext _context;
-
-//    public UserRepository(ApplicationDbContext context)
-//    {
-//        _context = context;
-//    }
-
-//    public async Task<User?> GetByUsernameAsync(string username)
-//    {
-//        var user = await _context.UsersData
-//            .FirstOrDefaultAsync(u => u.Username == username);
-
-//        if (user == null)
-//            return null;
-
-//        return MapToDomain(user);
-//    }
-
-//    public async Task<User?> GetByRefreshTokenAsync(string refreshToken)
-//    {
-//        var user = await _context.UsersData
-//            .FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
-
-//        if (user == null)
-//            return null;
-
-//        return MapToDomain(user);
-//    }
-
-//    public async Task AddAsync(User user)
-//    {
-//        var entity = new UsersDatum
-//        {
-//            Username = user.Username,
-//            PasswordHash = user.PasswordHash,
-//            Role = user.Role
-//        };
-
-//        await _context.UsersData.AddAsync(entity);
-//        await _context.SaveChangesAsync();
-//    }
-
-//    public async Task UpdateAsync(User user)
-//    {
-//        var entity = await _context.UsersData
-//            .FirstOrDefaultAsync(u => u.Id == user.Id);
-
-//        if (entity == null)
-//            return;
-
-//        entity.RefreshToken = user.RefreshToken;
-//        entity.RefreshTokenExpiryTime = user.RefreshTokenExpiryTime;
-
-//        await _context.SaveChangesAsync();
-//    }
-
-//    private static User MapToDomain(UsersDatum entity) => new User
-//    {
-//        Id = entity.Id,
-//        Username = entity.Username,
-//        PasswordHash = entity.PasswordHash,
-//        Role = entity.Role,
-//        RefreshToken = entity.RefreshToken,
-//        RefreshTokenExpiryTime = entity.RefreshTokenExpiryTime
-//    };
-//}
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -154,10 +72,9 @@ public class UserRepository : IUserRepository
 
     private static User MapToDomain(UsersDatum entity)
     {
-        // Safely parse the enum in standard block scope to avoid compilation reference/signature ambiguity
         if (!Enum.TryParse<UserRole>(entity.Role, true, out var parsedRole))
         {
-            parsedRole = UserRole.Student; // Default fallback
+            parsedRole = UserRole.Student; 
         }
 
         return new User

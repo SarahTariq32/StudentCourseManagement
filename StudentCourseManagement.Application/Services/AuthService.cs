@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using StudentCourseManagement.Application.DTOs;
 using StudentCourseManagement.Application.Interfaces;
 using StudentCourseManagement.Domain.Entities;
+using StudentCourseManagement.Domain.Enums;
 
 namespace StudentCourseManagement.Application.Services;
 
@@ -41,7 +42,7 @@ public class AuthService : IAuthService
         var user = new User
         {
             Username = dto.Username,
-            Role = dto.Role
+            Role = Enum.Parse<StudentCourseManagement.Domain.Enums.UserRole>(dto.Role.ToString())
         };
 
         user.PasswordHash = _passwordHasher.HashPassword(
@@ -73,7 +74,7 @@ public class AuthService : IAuthService
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new Claim(ClaimTypes.Name, user.Username),
-            new Claim(ClaimTypes.Role, user.Role.ToString())
+            new Claim(ClaimTypes.Role, user.Role.ToString()) 
         };
 
         var jwtKey = _configuration["Jwt:Key"]
@@ -91,7 +92,6 @@ public class AuthService : IAuthService
             expires: DateTime.UtcNow.AddHours(2),
             signingCredentials: credentials);
 
-        // Generate secure 64-byte refresh token with 7-day lifetime
         var refreshToken = GenerateSecureRefreshToken();
         user.RefreshToken = refreshToken;
         user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
@@ -118,7 +118,7 @@ public class AuthService : IAuthService
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new Claim(ClaimTypes.Name, user.Username),
-            new Claim(ClaimTypes.Role, user.Role.ToString())
+            new Claim(ClaimTypes.Role, user.Role.ToString()) 
         };
 
         var jwtKey = _configuration["Jwt:Key"]
@@ -131,13 +131,11 @@ public class AuthService : IAuthService
             key,
             SecurityAlgorithms.HmacSha256);
 
-        // Keep the access-token lifetime at 5 minutes for testing
         var token = new JwtSecurityToken(
             claims: claims,
             expires: DateTime.UtcNow.AddMinutes(5),
             signingCredentials: credentials);
 
-        // Generate a new secure refresh token (rotation) with a new 7-day lifetime
         var newRefreshToken = GenerateSecureRefreshToken();
         user.RefreshToken = newRefreshToken;
         user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);

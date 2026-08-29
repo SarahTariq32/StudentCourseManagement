@@ -26,7 +26,6 @@ public class ExceptionMiddleware
         }
         catch (Exception ex)
         {
-            // Log DETAILED diagnostics internally for developers (goes to console, file, sequence, AppInsights, etc.)
             _logger.LogError(ex, "An unhandled exception occurred: {Message}. Path: {Path}, Method: {Method}", 
                 ex.Message, context.Request.Path, context.Request.Method);
 
@@ -39,7 +38,6 @@ public class ExceptionMiddleware
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-        // Return a generic, user-friendly message to the endpoint client
         var response = new
         {
             StatusCode = context.Response.StatusCode,

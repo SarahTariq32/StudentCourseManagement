@@ -5,18 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentCourseManagement.Application.Interfaces
+
+namespace StudentCourseManagement.Application.Interfaces;
+
+public interface IStudentService
 {
-    public interface IStudentService
-    {
-        Task<List<StudentDto>> GetAllAsync();
-
-        Task<StudentDto?> GetByIdAsync(int id);
-
-        Task<StudentDto> CreateAsync(CreateStudentDto dto);
-
-        Task<bool> UpdateAsync(int id, UpdateStudentDto dto);
-
-        Task<bool> DeleteAsync(int id);
-    }
+    Task<List<StudentDto>> GetAllAsync();
+    Task<PagedResultDto<StudentDto>> GetPagedAsync(StudentQueryParameters queryParams);
+    Task<StudentDto?> GetByIdAsync(int id);
+    Task<StudentDto> CreateAsync(CreateStudentDto dto);
+    Task<bool> UpdateAsync(int id, UpdateStudentDto dto);
+    Task<bool> DeleteAsync(int id);
 }

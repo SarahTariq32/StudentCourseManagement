@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StudentCourseManagement.Application.DTOs;
 using StudentCourseManagement.Application.Interfaces;
 using StudentCourseManagement.Domain.Entities;
 using StudentCourseManagement.Infrastructure.Data;
@@ -109,5 +110,50 @@ public class StudentRepository : IStudentRepository
         {
             throw new Exception($"Error deleting student with ID {id}: {ex.Message}", ex);
         }
+    }
+
+    public async Task<PagedResultDto<Student>> GetPagedAsync(StudentQueryParameters queryParams)
+    {
+
+        var query = _context.Students
+            .AsNoTracking()
+            .Include(s => s.StudentCourses)
+                .ThenInclude(sc => sc.Course)
+            .AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(queryParams.SearchTerm))
+        {
+            var term = queryParams.SearchTerm.Trim().ToLower();
+            query = query.Where(s => s.Name.ToLower().Contains(term) || s.Email.ToLower().Contains(term));
+        }
+
+        if (queryParams.MinAge.HasValue)
+            query = query.Where(s => s.Age >= queryParams.MinAge.Value);
+
+        if (queryParams.MaxAge.HasValue)
+            query = query.Where(s => s.Age <= queryParams.MaxAge.Value);
+
+        query = queryParams.SortBy.ToLower() switch
+        {
+            "email" => queryParams.IsDescending ? query.OrderByDescending(s => s.Email) : query.OrderBy(s => s.Email),
+            "age" => queryParams.IsDescending ? query.OrderByDescending(s => s.Age) : query.OrderBy(s => s.Age),
+            "id" => queryParams.IsDescending ? query.OrderByDescending(s => s.Id) : query.OrderBy(s => s.Id),
+            _ => queryParams.IsDescending ? query.OrderByDescending(s => s.Name) : query.OrderBy(s => s.Name)
+        };
+
+        int totalCount = await query.CountAsync();
+
+        var items = await query
+            .Skip((queryParams.PageIndex - 1) * queryParams.PageSize)
+            .Take(queryParams.PageSize)
+            .ToListAsync();
+
+        return new PagedResultDto<Student>
+        {
+            Items = items.Select(s => s.ToDomain()).ToList(),
+            PageIndex = queryParams.PageIndex,
+            PageSize = queryParams.PageSize,
+            TotalCount = totalCount
+        };
     }
 }

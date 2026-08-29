@@ -15,7 +15,6 @@ public static class StudentMapping
             Age = student.Age
         };
 
-        // NEW: Map the join table records and nested course names into the domain model
         if (student.StudentCourses != null && student.StudentCourses.Any())
         {
             foreach (var sc in student.StudentCourses)

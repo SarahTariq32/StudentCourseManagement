@@ -6,14 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentCourseManagement.Application.DTOs
+
+public class RegisterDto
 {
-    public class RegisterDto
-    {
-        public string Username { get; set; } = null!;
-        public string Password { get; set; } = null!;
-        [Required]
-        [EnumDataType(typeof(UserRole), ErrorMessage = "Role must be either 'Student' or 'Admin'.")]
-        public UserRole Role { get; set; }
-    }
+    public string Username { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
+    public UserRole Role { get; set; } = UserRole.Student;
 }

@@ -1,4 +1,5 @@
-﻿using StudentCourseManagement.Domain.Entities;
+﻿using StudentCourseManagement.Application.DTOs;
+using StudentCourseManagement.Domain.Entities;
 
 namespace StudentCourseManagement.Application.Interfaces;
 
@@ -13,4 +14,5 @@ public interface IStudentRepository
     Task UpdateAsync(Student student);
 
     Task DeleteAsync(int id);
+    Task<PagedResultDto<Student>> GetPagedAsync(StudentQueryParameters queryParams);
 }

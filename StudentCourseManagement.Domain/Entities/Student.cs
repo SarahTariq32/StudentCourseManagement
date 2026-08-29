@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-// Student.cs
 namespace StudentCourseManagement.Domain.Entities;
 
 public class Student
